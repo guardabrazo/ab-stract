@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>1657_36.jpg</string>
+		<array>
+			<real>44.00716156902536</real>
+			<real>0.002721273025307891</real>
+			<real>-0.005384186296986115</real>
+		</array>
+	</array>
+	<array>
+		<string>885_15.jpg</string>
+		<array>
+			<real>72.60151473091784</real>
+			<real>0.19170811972574198</real>
+			<real>-0.517204744468458</real>
+		</array>
+	</array>
+	<array>
+		<string>B 053 B 031.jpg</string>
+		<array>
+			<real>33.78806290262582</real>
+			<real>61.35573320339585</real>
+			<real>-28.010611594279634</real>
+		</array>
+	</array>
+	<array>
+		<string>B 053 B 033.jpg</string>
+		<array>
+			<real>68.94964659266611</real>
+			<real>5.7938198046315055</real>
+			<real>-2.5694280694726013</real>
+		</array>
+	</array>
+	<array>
+		<string>B 055 A 003.jpg</string>
+		<array>
+			<real>69.1679502450831</real>
+			<real>0.11039240597493505</real>
+			<real>-3.4599380068039975</real>
+		</array>
+	</array>
+	<array>
+		<string>B 055 A 004.jpg</string>
+		<array>
+			<real>67.42402473283636</real>
+			<real>7.674870456370108</real>
+			<real>-5.403750611827141</real>
+		</array>
+	</array>
+	<array>
+		<string>B 055 A 005.jpg</string>
+		<array>
+			<real>67.17710975473844</real>
+			<real>-1.3001025943989997</real>
+			<real>-10.422147122472115</real>
+		</array>
+	</array>
+	<array>
+		<string>B 055 A 034.jpg</string>
+		<array>
+			<real>77.27899374044486</real>
+			<real>3.8386115467157755</real>
+			<real>-6.036683396595266</real>
+		</array>
+	</array>
+	<array>
+		<string>B 056 A 016.jpg</string>
+		<array>
+			<real>70.52872866330856</real>
+			<real>5.899959029558199</real>
+			<real>-12.991119888868297</real>
+		</array>
+	</array>
+	<array>
+		<string>B 057 A 004.jpg</string>
+		<array>
+			<real>59.73425045196508</real>
+			<real>10.068501477856874</real>
+			<real>-1.0504070464385729</real>
+		</array>
+	</array>
+	<array>
+		<string>B 057 A 005.jpg</string>
+		<array>
+			<real>39.364436521330525</real>
+			<real>63.997572917584485</real>
+			<real>48.56599247889077</real>
+		</array>
+	</array>
+	<array>
+		<string>B 058 B 030.jpg</string>
+		<array>
+			<real>69.97898217560959</real>
+			<real>11.669261781230734</real>
+			<real>-13.742312628224651</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 009.jpg</string>
+		<array>
+			<real>63.039543242218144</real>
+			<real>4.177150680466923</real>
+			<real>-11.585551602671028</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 010.jpg</string>
+		<array>
+			<real>39.559612248740784</real>
+			<real>64.39565235357935</real>
+			<real>47.56618444353033</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 011.jpg</string>
+		<array>
+			<real>68.27961528197685</real>
+			<real>0.9313857597808561</real>
+			<real>-1.4281891898362264</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 012.jpg</string>
+		<array>
+			<real>61.19664807555051</real>
+			<real>17.477257322228603</real>
+			<real>-1.5774469242062938</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 013.jpg</string>
+		<array>
+			<real>58.29736298541545</real>
+			<real>12.02182287020931</real>
+			<real>-0.28526419062395725</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 014.jpg</string>
+		<array>
+			<real>66.06741667330192</real>
+			<real>-0.43731156653575853</real>
+			<real>-3.0969182823937347</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 015.jpg</string>
+		<array>
+			<real>66.80778414958318</real>
+			<real>0.7084360323369454</real>
+			<real>1.4117160941468532</real>
+		</array>
+	</array>
+	<array>
+		<string>B 059 A 016.jpg</string>
+		<array>
+			<real>61.088361269429726</real>
+			<real>7.978182973062797</real>
+			<real>-3.6452133203930925</real>
+		</array>
+	</array>
+</array>
+</plist>
