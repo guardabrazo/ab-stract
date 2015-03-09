@@ -168,6 +168,7 @@
 				TargetAttributes = {
 					EF2C06121AA866F700F00878 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 83ZSEYKL4K;
 					};
 					EF2C062B1AA866F800F00878 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -345,9 +346,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "ab·stract/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee1d3188-5df9-4f5c-a359-fa6e264dea88";
 			};
 			name = Debug;
 		};
@@ -355,9 +359,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = "ab·stract/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "ee1d3188-5df9-4f5c-a359-fa6e264dea88";
 			};
 			name = Release;
 		};
@@ -414,6 +421,7 @@
 				EF2C06381AA866F800F00878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EF2C06391AA866F800F00878 /* Build configuration list for PBXNativeTarget "ab·stractTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +430,7 @@
 				EF2C063B1AA866F800F00878 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
