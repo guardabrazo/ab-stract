@@ -26,6 +26,11 @@
 @property (strong, nonatomic) RGBtoLABConverter *converter;
 
 
+//HELPERS
+@property (assign, nonatomic) CGFloat transitionTime;
+@property (weak, nonatomic) IBOutlet UISlider *slider;
+@property (weak, nonatomic) IBOutlet UILabel *transitionTimeLabel;
+
 - (void)centerScrollViewContents;
 
 @end
@@ -49,6 +54,14 @@
     
     // 6
     [self centerScrollViewContents];
+    
+    
+    //HELPERS
+    self.slider.hidden = YES;
+    self.transitionTimeLabel.hidden = YES;
+    self.transitionTime = 4.0;
+
+    
     
     
 }
@@ -133,7 +146,35 @@
 
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView {
     // The scroll view has zoomed, so you need to re-center the contents
-    if (scrollView.zoomScale > 1100) {
+    
+    
+    if(scrollView.multipleTouchEnabled){
+        
+        CGFloat fSpeedZoom = 5;
+        
+        scrollView.maximumZoomScale=scrollView.zoomScale+fSpeedZoom;
+        //scrollView.minimumZoomScale=scrollView.zoomScale-fSpeedZoom;
+        
+       // CGFloat fMaxZoomScale = scrollView.maximumZoomScale;
+       // CGFloat fMinZoomScale = self.minScale;
+        
+        NSLog(@"%f", scrollView.zoomScale);
+        
+       /*
+        if(scrollView.maximumZoomScale>fMaxZoomScale){
+            NSLog(@"ABOVE MAX");
+            self.scrollView.maximumZoomScale=fMaxZoomScale;
+        }
+        
+        
+        if(scrollView.minimumZoomScale<fMinZoomScale){
+            NSLog(@"BELOW MIN");
+            self.scrollView.minimumZoomScale=fMinZoomScale;
+        }
+        */
+    }
+    
+    if (scrollView.zoomScale > 1080) {
         NSLog(@"Do the magic!");
         [self getRGBPixelColor];
         self.view.userInteractionEnabled = NO;
@@ -264,7 +305,8 @@
     
     self.imageView.image = randomImage;
     self.scrollView.zoomScale = self.minScale;
-    [UIView animateWithDuration:4
+    
+    [UIView animateWithDuration:self.transitionTime
                      animations:^{
                          self.colorView.alpha = 0.0;
                      }completion:^(BOOL finished) {
@@ -275,6 +317,24 @@
 
 - (IBAction)showHelpers:(id)sender {
     
+    static int toggle = 0;
+    
+    if (toggle %2 == 0) {
+        self.slider.hidden = NO;
+        self.transitionTimeLabel.hidden = NO;
+    }else{
+        self.slider.hidden = YES;
+        self.transitionTimeLabel.hidden = YES;
+    }
+    
+    toggle ++;
+    
+}
+
+- (IBAction)changeTransitionTime:(UISlider *)sender {
+    
+    self.transitionTime = sender.value;
+    self.transitionTimeLabel.text = [NSString stringWithFormat:@"Transition time = %f", sender.value];
 }
 
 @end
