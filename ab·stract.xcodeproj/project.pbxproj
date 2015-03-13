@@ -20,6 +20,11 @@
 		EF6519721AB32163004FFD53 /* interior_miniatura_figura_blanco.png in Resources */ = {isa = PBXBuildFile; fileRef = EF65196E1AB32163004FFD53 /* interior_miniatura_figura_blanco.png */; };
 		EF6519751AB323A8004FFD53 /* Aurora.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF6519741AB323A8004FFD53 /* Aurora.otf */; };
 		EF6519771AB323BB004FFD53 /* Inconsolata.otf in Resources */ = {isa = PBXBuildFile; fileRef = EF6519761AB323BB004FFD53 /* Inconsolata.otf */; };
+		EF65197B1AB327FE004FFD53 /* CreditsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF65197A1AB327FE004FFD53 /* CreditsViewController.m */; };
+		EF6519811AB32E0C004FFD53 /* miniatura@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519801AB32E0C004FFD53 /* miniatura@2x.png */; };
+		EF6519831AB32E4A004FFD53 /* miniatura_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519821AB32E4A004FFD53 /* miniatura_white@2x.png */; };
+		EF6519851AB32EDA004FFD53 /* creditos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519841AB32EDA004FFD53 /* creditos@2x.png */; };
+		EF6519891AB32FE7004FFD53 /* home_figura_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519881AB32FE7004FFD53 /* home_figura_white.png */; };
 		EF8A7C961AADA1FD00994771 /* RGBtoLABConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A7C951AADA1FD00994771 /* RGBtoLABConverter.m */; };
 		EF8A7C991AADA60E00994771 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF8A7C981AADA60E00994771 /* images.plist */; };
 		EF8A7CAF1AADA63300994771 /* 885_15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF8A7C9B1AADA63300994771 /* 885_15.jpg */; };
@@ -74,6 +79,12 @@
 		EF65196E1AB32163004FFD53 /* interior_miniatura_figura_blanco.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = interior_miniatura_figura_blanco.png; sourceTree = "<group>"; };
 		EF6519741AB323A8004FFD53 /* Aurora.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Aurora.otf; sourceTree = "<group>"; };
 		EF6519761AB323BB004FFD53 /* Inconsolata.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Inconsolata.otf; sourceTree = "<group>"; };
+		EF6519791AB327FE004FFD53 /* CreditsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreditsViewController.h; sourceTree = "<group>"; };
+		EF65197A1AB327FE004FFD53 /* CreditsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreditsViewController.m; sourceTree = "<group>"; };
+		EF6519801AB32E0C004FFD53 /* miniatura@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniatura@2x.png"; sourceTree = "<group>"; };
+		EF6519821AB32E4A004FFD53 /* miniatura_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniatura_white@2x.png"; sourceTree = "<group>"; };
+		EF6519841AB32EDA004FFD53 /* creditos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "creditos@2x.png"; sourceTree = "<group>"; };
+		EF6519881AB32FE7004FFD53 /* home_figura_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_figura_white.png; sourceTree = "<group>"; };
 		EF8A7C941AADA1FD00994771 /* RGBtoLABConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGBtoLABConverter.h; path = ../RGBtoLABConverter.h; sourceTree = "<group>"; };
 		EF8A7C951AADA1FD00994771 /* RGBtoLABConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGBtoLABConverter.m; path = ../RGBtoLABConverter.m; sourceTree = "<group>"; };
 		EF8A7C981AADA60E00994771 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
@@ -143,6 +154,8 @@
 				EF2C061D1AA866F700F00878 /* ViewController.h */,
 				EF2C061E1AA866F700F00878 /* ViewController.m */,
 				EF2C06201AA866F700F00878 /* Main.storyboard */,
+				EF6519791AB327FE004FFD53 /* CreditsViewController.h */,
+				EF65197A1AB327FE004FFD53 /* CreditsViewController.m */,
 				EF8A7C981AADA60E00994771 /* images.plist */,
 				EF6519731AB32167004FFD53 /* Graphics */,
 				EF6519781AB323C1004FFD53 /* Fonts */,
@@ -184,10 +197,14 @@
 		EF6519731AB32167004FFD53 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				EF6519801AB32E0C004FFD53 /* miniatura@2x.png */,
+				EF6519821AB32E4A004FFD53 /* miniatura_white@2x.png */,
 				EF65196B1AB32163004FFD53 /* about_miniatura_figura.png */,
 				EF65196C1AB32163004FFD53 /* about_triangulos.png */,
 				EF65196D1AB32163004FFD53 /* home_figura.png */,
+				EF6519881AB32FE7004FFD53 /* home_figura_white.png */,
 				EF65196E1AB32163004FFD53 /* interior_miniatura_figura_blanco.png */,
+				EF6519841AB32EDA004FFD53 /* creditos@2x.png */,
 			);
 			name = Graphics;
 			sourceTree = "<group>";
@@ -319,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF8A7CC11AADA63300994771 /* B 059 A 015.jpg in Resources */,
+				EF6519851AB32EDA004FFD53 /* creditos@2x.png in Resources */,
 				EF8A7CB21AADA63300994771 /* B 053 B 033.jpg in Resources */,
 				EF8A7CBB1AADA63300994771 /* B 059 A 009.jpg in Resources */,
 				EF6519701AB32163004FFD53 /* about_triangulos.png in Resources */,
@@ -334,12 +352,15 @@
 				EF2C06221AA866F700F00878 /* Main.storyboard in Resources */,
 				EF6519751AB323A8004FFD53 /* Aurora.otf in Resources */,
 				EF2C06271AA866F700F00878 /* LaunchScreen.xib in Resources */,
+				EF6519831AB32E4A004FFD53 /* miniatura_white@2x.png in Resources */,
+				EF6519891AB32FE7004FFD53 /* home_figura_white.png in Resources */,
 				EF65196F1AB32163004FFD53 /* about_miniatura_figura.png in Resources */,
 				EF8A7CB61AADA63300994771 /* B 055 A 034.jpg in Resources */,
 				EF8A7CC01AADA63300994771 /* B 059 A 014.jpg in Resources */,
 				EF8A7CB31AADA63300994771 /* B 055 A 003.jpg in Resources */,
 				EF6519721AB32163004FFD53 /* interior_miniatura_figura_blanco.png in Resources */,
 				EF8A7CB91AADA63300994771 /* B 057 A 005.jpg in Resources */,
+				EF6519811AB32E0C004FFD53 /* miniatura@2x.png in Resources */,
 				EF8A7CB51AADA63300994771 /* B 055 A 005.jpg in Resources */,
 				EF6519771AB323BB004FFD53 /* Inconsolata.otf in Resources */,
 				EF6519711AB32163004FFD53 /* home_figura.png in Resources */,
@@ -366,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF2C061F1AA866F700F00878 /* ViewController.m in Sources */,
+				EF65197B1AB327FE004FFD53 /* CreditsViewController.m in Sources */,
 				EF2C061C1AA866F700F00878 /* AppDelegate.m in Sources */,
 				EF2C06191AA866F700F00878 /* main.m in Sources */,
 				EF8A7C961AADA1FD00994771 /* RGBtoLABConverter.m in Sources */,

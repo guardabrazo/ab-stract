@@ -337,4 +337,10 @@
     self.transitionTimeLabel.text = [NSString stringWithFormat:@"Transition time = %f", sender.value];
 }
 
+- (IBAction)dismissViewController:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+
 @end
