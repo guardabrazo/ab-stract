@@ -159,7 +159,7 @@
     <resources>
         <image name="creditos.png" width="1024" height="768"/>
         <image name="home_figura.png" width="203" height="285"/>
-        <image name="home_figura_white.png" width="134" height="188"/>
+        <image name="home_figura_white.png" width="203" height="285"/>
         <image name="miniatura.png" width="67" height="94"/>
         <image name="miniatura_white.png" width="67" height="94"/>
     </resources>

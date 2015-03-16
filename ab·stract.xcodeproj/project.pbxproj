@@ -25,6 +25,7 @@
 		EF6519831AB32E4A004FFD53 /* miniatura_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519821AB32E4A004FFD53 /* miniatura_white@2x.png */; };
 		EF6519851AB32EDA004FFD53 /* creditos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519841AB32EDA004FFD53 /* creditos@2x.png */; };
 		EF6519891AB32FE7004FFD53 /* home_figura_white.png in Resources */ = {isa = PBXBuildFile; fileRef = EF6519881AB32FE7004FFD53 /* home_figura_white.png */; };
+		EF785A611AB6E3FF005A8339 /* SoundEffectPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = EF785A601AB6E3FF005A8339 /* SoundEffectPlayer.m */; };
 		EF8A7C961AADA1FD00994771 /* RGBtoLABConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = EF8A7C951AADA1FD00994771 /* RGBtoLABConverter.m */; };
 		EF8A7C991AADA60E00994771 /* images.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF8A7C981AADA60E00994771 /* images.plist */; };
 		EF8A7CAF1AADA63300994771 /* 885_15.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF8A7C9B1AADA63300994771 /* 885_15.jpg */; };
@@ -85,6 +86,8 @@
 		EF6519821AB32E4A004FFD53 /* miniatura_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "miniatura_white@2x.png"; sourceTree = "<group>"; };
 		EF6519841AB32EDA004FFD53 /* creditos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "creditos@2x.png"; sourceTree = "<group>"; };
 		EF6519881AB32FE7004FFD53 /* home_figura_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_figura_white.png; sourceTree = "<group>"; };
+		EF785A5F1AB6E3FF005A8339 /* SoundEffectPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffectPlayer.h; sourceTree = "<group>"; };
+		EF785A601AB6E3FF005A8339 /* SoundEffectPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffectPlayer.m; sourceTree = "<group>"; };
 		EF8A7C941AADA1FD00994771 /* RGBtoLABConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RGBtoLABConverter.h; path = ../RGBtoLABConverter.h; sourceTree = "<group>"; };
 		EF8A7C951AADA1FD00994771 /* RGBtoLABConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RGBtoLABConverter.m; path = ../RGBtoLABConverter.m; sourceTree = "<group>"; };
 		EF8A7C981AADA60E00994771 /* images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = images.plist; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 				EF2C06201AA866F700F00878 /* Main.storyboard */,
 				EF6519791AB327FE004FFD53 /* CreditsViewController.h */,
 				EF65197A1AB327FE004FFD53 /* CreditsViewController.m */,
+				EF785A5F1AB6E3FF005A8339 /* SoundEffectPlayer.h */,
+				EF785A601AB6E3FF005A8339 /* SoundEffectPlayer.m */,
 				EF8A7C981AADA60E00994771 /* images.plist */,
 				EF6519731AB32167004FFD53 /* Graphics */,
 				EF6519781AB323C1004FFD53 /* Fonts */,
@@ -389,6 +394,7 @@
 				EF2C061F1AA866F700F00878 /* ViewController.m in Sources */,
 				EF65197B1AB327FE004FFD53 /* CreditsViewController.m in Sources */,
 				EF2C061C1AA866F700F00878 /* AppDelegate.m in Sources */,
+				EF785A611AB6E3FF005A8339 /* SoundEffectPlayer.m in Sources */,
 				EF2C06191AA866F700F00878 /* main.m in Sources */,
 				EF8A7C961AADA1FD00994771 /* RGBtoLABConverter.m in Sources */,
 			);
@@ -519,7 +525,7 @@
 				INFOPLIST_FILE = "ab·stract/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee1d3188-5df9-4f5c-a359-fa6e264dea88";
+				PROVISIONING_PROFILE = "82d33033-aeeb-4748-a2b1-77ebaf22f9ca";
 			};
 			name = Debug;
 		};
@@ -532,7 +538,7 @@
 				INFOPLIST_FILE = "ab·stract/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ee1d3188-5df9-4f5c-a359-fa6e264dea88";
+				PROVISIONING_PROFILE = "82d33033-aeeb-4748-a2b1-77ebaf22f9ca";
 			};
 			name = Release;
 		};

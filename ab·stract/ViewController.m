@@ -150,7 +150,7 @@
     
     if(scrollView.multipleTouchEnabled){
         
-        CGFloat fSpeedZoom = 5;
+        CGFloat fSpeedZoom = 8;
         
         scrollView.maximumZoomScale=scrollView.zoomScale+fSpeedZoom;
         //scrollView.minimumZoomScale=scrollView.zoomScale-fSpeedZoom;
