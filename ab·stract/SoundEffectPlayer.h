@@ -23,6 +23,7 @@
 @property (weak, nonatomic) id<SoundEffectDelegate> delegate;
 
 @property (assign, nonatomic) int numberOfLoops;
+@property (assign, nonatomic) float volume;
 
 -(void)play:(NSString*)fileName;
 -(void)stop;

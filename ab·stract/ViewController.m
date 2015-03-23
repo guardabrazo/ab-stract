@@ -30,10 +30,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
-//HELPERS
-@property (assign, nonatomic) CGFloat transitionTime;
-@property (weak, nonatomic) IBOutlet UISlider *slider;
-@property (weak, nonatomic) IBOutlet UILabel *transitionTimeLabel;
+@property (strong, nonatomic) NSArray *audioFilesArray;
+
 
 - (void)centerScrollViewContents;
 
@@ -61,13 +59,8 @@
     
     
     self.backButton.alpha = 1;
-    
-    //HELPERS
-    self.slider.hidden = YES;
-    self.transitionTimeLabel.hidden = YES;
-    self.transitionTime = 5.0;
 
-    
+    self.audioFilesArray = [NSArray arrayWithObjects:@"eter01", @"eter02", @"eter03", @"eter04", @"eter05", @"eter06", @"eter07", @"eter08", @"eter09", @"eter10", @"eter11", @"eter12", @"eter13", @"eter14", @"eter15", nil];
     
     
 }
@@ -120,9 +113,10 @@
     
     self.soundEffectPlayer = [[SoundEffectPlayer alloc]init];
     self.soundEffectPlayer.numberOfLoops = -1;
+    self.soundEffectPlayer.volume = 0.5;
     
     
-    [self.soundEffectPlayer play:@"Earth03"];
+    [self.soundEffectPlayer play:self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])]];
     
 }
 
@@ -168,43 +162,13 @@
     // The scroll view has zoomed, so you need to re-center the contents
     
     
-    if(scrollView.multipleTouchEnabled){
-        
-        CGFloat fSpeedZoom = 10;
-        
-        scrollView.maximumZoomScale=scrollView.zoomScale+fSpeedZoom;
-        //scrollView.minimumZoomScale=scrollView.zoomScale-fSpeedZoom;
-        
-       // CGFloat fMaxZoomScale = scrollView.maximumZoomScale;
-       // CGFloat fMinZoomScale = self.minScale;
-        
-        NSLog(@"%f", scrollView.zoomScale);
-        
-       /*
-        if(scrollView.maximumZoomScale>fMaxZoomScale){
-            NSLog(@"ABOVE MAX");
-            self.scrollView.maximumZoomScale=fMaxZoomScale;
-        }
-        
-        
-        if(scrollView.minimumZoomScale<fMinZoomScale){
-            NSLog(@"BELOW MIN");
-            self.scrollView.minimumZoomScale=fMinZoomScale;
-        }
-        */
-    }
+   
     
     if (scrollView.zoomScale > 1080) {
         self.view.userInteractionEnabled = NO;
         NSLog(@"Do the magic!");
         [self getRGBPixelColor];
-        
-        
-        
-        [self.soundEffectPlayer stop];
-        
-        self.soundEffectPlayer.numberOfLoops = 0;
-        [self.soundEffectPlayer play:@"Eter_01Crush"];
+        [self playAudioAgain];
         
         self.colorView.backgroundColor = [UIColor colorWithRed:self.red/255 green:self.green/255 blue:self.blue/255 alpha:1];
         [UIView animateWithDuration:0.5
@@ -334,13 +298,7 @@
     self.imageView.image = randomImage;
     self.scrollView.zoomScale = self.minScale;
     
-    
-    
-    NSLog(@"TT = %f", self.transitionTime);
-    
-    [self performSelector:@selector(playAudioAgain) withObject:self afterDelay:self.transitionTime];
-    
-    [UIView animateWithDuration:self.transitionTime
+    [UIView animateWithDuration:4.0
                      animations:^{
                          self.colorView.alpha = 0.0;
                      }completion:^(BOOL finished) {
@@ -359,32 +317,11 @@
 
 -(void)playAudioAgain{
     
-    self.soundEffectPlayer = [[SoundEffectPlayer alloc]init];
-    self.soundEffectPlayer.numberOfLoops = -1;
-    [self.soundEffectPlayer play:@"Eter_01"];
+    self.soundEffectPlayer.volume = 0.5;
+    [self.soundEffectPlayer play:self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])]];
 }
 
-- (IBAction)showHelpers:(id)sender {
-    
-    static int toggle = 0;
-    
-    if (toggle %2 == 0) {
-        self.slider.hidden = NO;
-        self.transitionTimeLabel.hidden = NO;
-    }else{
-        self.slider.hidden = YES;
-        self.transitionTimeLabel.hidden = YES;
-    }
-    
-    toggle ++;
-    
-}
 
-- (IBAction)changeTransitionTime:(UISlider *)sender {
-    
-    self.transitionTime = sender.value;
-    self.transitionTimeLabel.text = [NSString stringWithFormat:@"Transition time = %f", sender.value];
-}
 
 - (IBAction)dismissViewController:(id)sender {
     

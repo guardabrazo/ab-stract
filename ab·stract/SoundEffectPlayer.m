@@ -25,6 +25,7 @@
     self.audioPlayer.delegate = self;
     
     self.audioPlayer.numberOfLoops = self.numberOfLoops;
+    self.audioPlayer.volume = self.volume;
     
     [self.audioPlayer play];
 }
