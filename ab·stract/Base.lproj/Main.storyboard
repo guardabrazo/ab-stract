@@ -107,10 +107,10 @@
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCr-Ym-MSC">
                                 <rect key="frame" x="50" y="50" width="67" height="94"/>
-                                <state key="normal" image="miniatura.png">
+                                <state key="normal" image="miniatura_white.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <state key="highlighted" image="miniatura_white.png"/>
+                                <state key="highlighted" image="miniatura.png"/>
                                 <connections>
                                     <action selector="dismissViewController:" destination="Les-Bc-Hcw" eventType="touchUpInside" id="1KU-xi-zwG"/>
                                     <action selector="dismissViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="441-l4-SA8"/>
@@ -146,6 +146,7 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="backButton" destination="HCr-Ym-MSC" id="GDA-RO-s3Y"/>
                         <outlet property="scrollView" destination="sZb-K8-oR7" id="4tI-nT-qhC"/>
                         <outlet property="slider" destination="nkC-jt-1ps" id="Rkr-hI-A4O"/>
                         <outlet property="transitionTimeLabel" destination="BFg-Fb-q2F" id="Qn7-C8-L3y"/>

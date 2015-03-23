@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "RGBtoLABConverter.h"
+#import "SoundEffectPlayer.h"
 
 @interface ViewController ()
 
@@ -25,6 +26,9 @@
 
 @property (strong, nonatomic) RGBtoLABConverter *converter;
 
+@property (strong, nonatomic) SoundEffectPlayer *soundEffectPlayer;
+
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 //HELPERS
 @property (assign, nonatomic) CGFloat transitionTime;
@@ -56,10 +60,12 @@
     [self centerScrollViewContents];
     
     
+    self.backButton.alpha = 1;
+    
     //HELPERS
     self.slider.hidden = YES;
     self.transitionTimeLabel.hidden = YES;
-    self.transitionTime = 4.0;
+    self.transitionTime = 5.0;
 
     
     
@@ -110,6 +116,20 @@
     self.colorView.alpha = 0.0;
     [self.view addSubview:self.colorView];
     
+    //SOUND PLAYER
+    
+    self.soundEffectPlayer = [[SoundEffectPlayer alloc]init];
+    self.soundEffectPlayer.numberOfLoops = -1;
+    
+    
+    [self.soundEffectPlayer play:@"Earth03"];
+    
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [UIView animateWithDuration:10 animations:^{
+        self.backButton.alpha = 0.1;
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -150,7 +170,7 @@
     
     if(scrollView.multipleTouchEnabled){
         
-        CGFloat fSpeedZoom = 8;
+        CGFloat fSpeedZoom = 10;
         
         scrollView.maximumZoomScale=scrollView.zoomScale+fSpeedZoom;
         //scrollView.minimumZoomScale=scrollView.zoomScale-fSpeedZoom;
@@ -175,9 +195,16 @@
     }
     
     if (scrollView.zoomScale > 1080) {
+        self.view.userInteractionEnabled = NO;
         NSLog(@"Do the magic!");
         [self getRGBPixelColor];
-        self.view.userInteractionEnabled = NO;
+        
+        
+        
+        [self.soundEffectPlayer stop];
+        
+        self.soundEffectPlayer.numberOfLoops = 0;
+        [self.soundEffectPlayer play:@"Eter_01Crush"];
         
         self.colorView.backgroundColor = [UIColor colorWithRed:self.red/255 green:self.green/255 blue:self.blue/255 alpha:1];
         [UIView animateWithDuration:0.5
@@ -191,6 +218,7 @@
         
     }
     [self centerScrollViewContents];
+    
 }
 
 -(void)resetImage{
@@ -306,13 +334,34 @@
     self.imageView.image = randomImage;
     self.scrollView.zoomScale = self.minScale;
     
+    
+    
+    NSLog(@"TT = %f", self.transitionTime);
+    
+    [self performSelector:@selector(playAudioAgain) withObject:self afterDelay:self.transitionTime];
+    
     [UIView animateWithDuration:self.transitionTime
                      animations:^{
                          self.colorView.alpha = 0.0;
                      }completion:^(BOOL finished) {
-                         self.view.userInteractionEnabled = YES;
+                         if (finished) {
+                             self.view.userInteractionEnabled = YES;
+                             if(self.colorView.alpha == 0.0){
+                             }
+                         }
+                         
                      }];
     
+    
+    
+}
+
+
+-(void)playAudioAgain{
+    
+    self.soundEffectPlayer = [[SoundEffectPlayer alloc]init];
+    self.soundEffectPlayer.numberOfLoops = -1;
+    [self.soundEffectPlayer play:@"Eter_01"];
 }
 
 - (IBAction)showHelpers:(id)sender {
@@ -339,8 +388,19 @@
 
 - (IBAction)dismissViewController:(id)sender {
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    static int counter = 0;
+    counter++;
+    
+    if(counter %2 != 0){
+        NSLog(@"Button pushed");
+        [UIView animateWithDuration:2 animations:^{
+            self.backButton.alpha = 1;
+        }];
+    }else{
+        [self dismissViewControllerAnimated:YES completion:nil];
 
+    }
+ 
 }
 
 @end

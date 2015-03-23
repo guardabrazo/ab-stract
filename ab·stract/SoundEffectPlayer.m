@@ -24,8 +24,14 @@
 	self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
     self.audioPlayer.delegate = self;
     
+    self.audioPlayer.numberOfLoops = self.numberOfLoops;
     
     [self.audioPlayer play];
+}
+
+-(void)stop{
+    
+    [self.audioPlayer stop];
 }
 
 #pragma mark - AVAudioPlayerDelegate methods
