@@ -10,7 +10,7 @@
 #import "RGBtoLABConverter.h"
 #import "SoundEffectPlayer.h"
 
-@interface ViewController ()
+@interface ViewController () <AVAudioPlayerDelegate>
 
 @property (assign, nonatomic) float red;
 @property (assign, nonatomic) float green;
@@ -31,6 +31,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButton;
 
 @property (strong, nonatomic) NSArray *audioFilesArray;
+
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
 
 
 - (void)centerScrollViewContents;
@@ -61,6 +63,22 @@
     self.backButton.alpha = 1;
 
     self.audioFilesArray = [NSArray arrayWithObjects:@"eter01", @"eter02", @"eter03", @"eter04", @"eter05", @"eter06", @"eter07", @"eter08", @"eter09", @"eter10", @"eter11", @"eter12", @"eter13", @"eter14", @"eter15", nil];
+    
+    
+    
+    NSString *soundPath =[[NSBundle mainBundle] pathForResource:@"eter01" ofType:@"wav"];
+    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+    
+    NSError *error;
+    
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+    
+    self.audioPlayer.delegate = self;
+    self.audioPlayer.numberOfLoops = -1;
+    self.audioPlayer.volume = 0.1;
+    [self.audioPlayer play];
+
+    
     
     
 }
@@ -113,10 +131,12 @@
     
     self.soundEffectPlayer = [[SoundEffectPlayer alloc]init];
     self.soundEffectPlayer.numberOfLoops = -1;
-    self.soundEffectPlayer.volume = 0.5;
+    self.soundEffectPlayer.volume = 0.1;
     
     
-    [self.soundEffectPlayer play:self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])]];
+   //[self.soundEffectPlayer play:self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])]];
+    
+    
     
 }
 
@@ -168,6 +188,7 @@
         self.view.userInteractionEnabled = NO;
         NSLog(@"Do the magic!");
         [self getRGBPixelColor];
+        self.audioPlayer.volume = 0.1;
         [self playAudioAgain];
         
         self.colorView.backgroundColor = [UIColor colorWithRed:self.red/255 green:self.green/255 blue:self.blue/255 alpha:1];
@@ -183,6 +204,19 @@
     }
     [self centerScrollViewContents];
     
+    
+    
+    CGFloat const inMin = 0.3;
+    CGFloat const inMax = 1084;
+    
+    CGFloat const outMin = 0.1;
+    CGFloat const outMax = 1.0;
+    
+    CGFloat in = self.scrollView.zoomScale;
+    CGFloat out = outMin + (outMax - outMin) * (in - inMin) / (inMax - inMin);
+    
+    
+    [self.audioPlayer setVolume:out];
 }
 
 -(void)resetImage{
@@ -317,8 +351,20 @@
 
 -(void)playAudioAgain{
     
-    self.soundEffectPlayer.volume = 0.5;
-    [self.soundEffectPlayer play:self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])]];
+    NSString *randomAudioFile = self.audioFilesArray[arc4random_uniform([self.audioFilesArray count])];
+    
+    
+    NSString *soundPath =[[NSBundle mainBundle] pathForResource:randomAudioFile ofType:@"wav"];
+    NSURL *soundURL = [NSURL fileURLWithPath:soundPath];
+    
+    NSError *error;
+    
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+    
+    self.audioPlayer.delegate = self;
+    self.audioPlayer.numberOfLoops = -1;
+    self.audioPlayer.volume = 0.1;
+    [self.audioPlayer play];
 }
 
 
@@ -329,7 +375,6 @@
     counter++;
     
     if(counter %2 != 0){
-        NSLog(@"Button pushed");
         [UIView animateWithDuration:2 animations:^{
             self.backButton.alpha = 1;
         }];
